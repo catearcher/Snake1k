@@ -1,0 +1,1 @@
+<body onload='d=0;p=[5,5];setInterval(function(){if(prompt()=="")d++;if(d%4==0){p[1]--}else if(d%4==1){p[0]++}else if(d%4==2){p[1]++}else{p[0]--}if(p[0]>9||p[0]<0||p[1]>9||p[1]<0){location+=""}t="";for(i=0;i<10;i++){for(j=0;j<10;j++){t+=p[0]==j&&p[1]==i?"o":"."}t+="\n"}console.log(t)},99)'>
