@@ -1,12 +1,14 @@
 <script>
-// d = direction
-// directions: 0 = up, 1 = right, 2 = down, 3 = left
+// d = direction; 0 = up, 1 = right, 2 = down, 3 = left
+// c = direction change; 0 = no change, 1 = counterclockwise, 2 = clockwise
 // p = position [x, y]
-// t = temp string
+// t = generic temp variable
 d = 0;
+c = 0;
 p = [5,5];
 setInterval(function() {
-  if (prompt() == "") d++
+  c==1 ? d-- : (c==2 ? d++ : d);
+  c=0;
 
   if (d%4==0) {
     p[1]--
@@ -30,6 +32,7 @@ setInterval(function() {
     }
     t += "\n";
   }
+  console.clear();
   console.log(t);
-}, 99);
+}, 999);
 </script>
