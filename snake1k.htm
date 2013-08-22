@@ -3,9 +3,21 @@
 // c = direction change; 0 = no change, 1 = counterclockwise, 2 = clockwise
 // p = position [x, y]
 // t = generic temp variable
+// e = another temp variable
+// a = position of apple
+// A() = placeApple()
+// r = get random integer in range 0..9
 d = 0;
 c = 0;
 p = [5,5];
+r = function() {
+  return Math.random()*10>>0;
+};
+
+(A = function() {
+  a = [r(), r()];
+})();
+
 setInterval(function() {
   c==1 ? d-- : (c==2 ? d++ : d);
   c=0;
@@ -24,14 +36,20 @@ setInterval(function() {
     location+=""; // tot => neu laden
   }
 
+  if (p+"" == a+"") {
+    A();
+  }
+
   t = "";
 
   for (i=0;i<10;i++) {
     for (j=0;j<10;j++) {
-      t += (p[0]==j&&p[1]==i ?  "o" : ".");
+      e=j+","+i;
+      t += (p+""==e ? "o" : (a+""==e ? "x" : "."));
     }
     t += "\n";
   }
+
   console.clear();
   console.log(t);
 }, 999);
