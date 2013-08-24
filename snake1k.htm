@@ -1,7 +1,7 @@
 <script>
 // d = direction; 0 = up, 1 = right, 2 = down, 3 = left
 // c = direction change; 0 = no change, 1 = counterclockwise, 2 = clockwise
-// p = position [x, y]
+// p = positions of snake parts
 // t = generic temp variable
 // e = another temp variable
 // a = position of apple
@@ -26,15 +26,8 @@ setInterval(function() {
   c=0;
   t = "";
 
-  if (d%4==0) {
-    y--
-  } else if (d%4==1) {
-    x++
-  } else if (d%4==2) {
-    y++;
-  } else {
-    x--;
-  }
+  x+=[0,1,0,-1][d%4];
+  y+=[-1,0,1,0][d%4];
 
   (h = x+","+y).length>3 || s(h) ? location = t : d; // tot => neu laden
 
@@ -43,10 +36,8 @@ setInterval(function() {
   h == a ? A() : p.pop();
 
   // Rendering
-
-
-  for (i=0;i<100;i++) {
-    t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
+  for (i=0;i<100;) {
+    t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (i++%10==9 ? "\n" : "");
   }
 
   console.clear();
