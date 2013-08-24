@@ -31,10 +31,10 @@ setInterval(function() {
 
   (h = x+","+y).length>3 || s(h) ? location = t : d; // tot => neu laden
 
-  p.unshift(h);
+  p.push(h);
 
   // Rendering
-  for (h == a ? A() : p.pop();i<100;) {
+  for (h == a ? A() : p.shift();i<100;) {
     t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (~i++%10 ? "" : "\n")
   }
 
