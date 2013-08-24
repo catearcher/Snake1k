@@ -12,13 +12,14 @@ d = 1e7;
 c = 0;
 x = y = 5;
 p = ["5,5"];
+q = ".";
 s = function(k) {
   return~p.indexOf(k);
 };
 
 (A = function() {
   // neuen Apfel setzen und falls in Schlange => noch mal selbst aufrufen
-  s(a = (Math.random()*10^0)+","+new Date%10) && A()
+  s(a = (Math.random()*10^0)+q+new Date%10) && A()
 })();
 
 setInterval(function() {
@@ -29,13 +30,13 @@ setInterval(function() {
   x += e[d%4];
   y += e[(d+3)%4];
 
-  (h = x+","+y).length>3 || s(h) ? location = t : d; // tot => neu laden
+  (h = x+q+y).length>3 || s(h) ? location = t : d; // tot => neu laden
 
   p.push(h);
 
   // Rendering
   for (h == a ? A() : p.shift();i<100;) {
-    t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (~i++%10 ? "" : "\n")
+    t += (s(e = i%10 + q + (i/10^0)) ? "o" : (a==e ? "x" : q)) + (~i++%10 ? "" : "\n")
   }
 
   console.clear();
