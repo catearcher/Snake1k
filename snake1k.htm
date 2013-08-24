@@ -10,15 +10,16 @@
 // s() = function checking whether a position is inside the snake. if so, returns 1
 d = 1e7;
 c = 0;
-p = [[5,5]];
-s = function(x,y) {
+x = y = 5;
+p = ["5,5"];
+s = function(k,m) {
   p.forEach(function(z) {
-    if (z+"" == x) {
-      y = 1;
+    if (z == k) {
+      m = 1;
     }
   });
 
-  return y;
+  return m;
 };
 
 (A = function() {
@@ -28,27 +29,24 @@ s = function(x,y) {
 setInterval(function() {
   d+=[0,-1,1][c];
   c=0;
-  h = p[0].slice();
 
   if (d%4==0) {
-    h[1]--
+    y--
   } else if (d%4==1) {
-    h[0]++
+    x++
   } else if (d%4==2) {
-    h[1]++;
+    y++;
   } else {
-    h[0]--;
+    x--;
   }
 
-  g = h+"";
-
-  if (g.length > 3 || s(g)) {
+  if ((h = x+","+y).length > 3 || s(h)) {
     location+=""; // tot => neu laden
   }
 
   p.unshift(h);
 
-  g == a+"" ? A() : p.pop();
+  h == a+"" ? A() : p.pop();
 
   // Rendering
   t = "";
@@ -57,7 +55,7 @@ setInterval(function() {
     t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a+""==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
   }
 
-  console.clear();
+  //console.clear();
   console.log(t)
 }, 700);
 </script>
