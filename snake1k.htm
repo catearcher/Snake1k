@@ -5,13 +5,12 @@
 // t = generic temp variable
 // e = another temp variable
 // a = position of apple
-// l = last position of tail end
 // A() = placeApple()
 // h = snake head
 // s() = function checking whether a position is inside the snake. if so, returns 1
 d = 1e7;
 c = 0;
-p = [l=[5,4]];
+p = [[5,5]];
 s = function(x,y) {
   p.forEach(function(z) {
     if (z+"" == x) {
@@ -41,20 +40,19 @@ setInterval(function() {
     h[0]--;
   }
 
-  p.pop();
+  g = h+"";
 
-  if (h+"" == a+"") { // Apfel wird gefressen
-    p.push(l); // den bisherigen Kopf als Schwanzglied anhängen
-    A();
-  }
-
-  if (h[0] > 9 || h[0] < 0 || h[1] > 9 || h[1] < 0 || s(h+"")) {
+  if (g.length > 3 || s(g)) {
     location+=""; // tot => neu laden
   }
 
   p.unshift(h);
 
-  l = p[p.length-1];
+  if (g == a+"") { // Apfel wird gefressen
+    A();
+  } else {
+    p.pop()
+  }
 
   // Rendering
   t = "";
