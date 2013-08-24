@@ -57,15 +57,12 @@ setInterval(function() {
   // Rendering
   t = "";
 
-  for (i=0;i<10;i++) {
-    for (j=0;j<10;j++) {
-      e=j+","+i;
-      t += (s(e) ? "o" : (a+""==e ? "x" : "."));
-    }
-    t += "\n";
+  for (i=0;i<100;i++) {
+    e= i%10 + "," + (i/10^0);
+    t += (s(e) ? "o" : (a+""==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
   }
 
-  //console.clear();
+  console.clear();
   console.log(t);
 }, 999);
 </script>
