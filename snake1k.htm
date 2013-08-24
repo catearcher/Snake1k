@@ -22,8 +22,8 @@ s = function(k) {
 })();
 
 setInterval(function() {
-  d+=[0,-1,1][c];
-  c=0;
+  d += [0,-1,1][c];
+  c = i = 0;
   t = "";
 
   x+=[0,1,0,-1][d%4];
@@ -36,7 +36,7 @@ setInterval(function() {
   h == a ? A() : p.pop();
 
   // Rendering
-  for (i=0;i<100;) {
+  while (i<100) {
     t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (i++%10==9 ? "\n" : "");
   }
 
