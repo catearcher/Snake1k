@@ -48,11 +48,7 @@ setInterval(function() {
 
   p.unshift(h);
 
-  if (g == a+"") { // Apfel wird gefressen
-    A();
-  } else {
-    p.pop()
-  }
+  g == a+"" ? A() : p.pop();
 
   // Rendering
   t = "";
@@ -62,6 +58,6 @@ setInterval(function() {
   }
 
   console.clear();
-  console.log(t);
+  console.log(t)
 }, 700);
 </script>
