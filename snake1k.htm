@@ -36,9 +36,7 @@ setInterval(function() {
     x--;
   }
 
-  if ((h = x+","+y).length > 3 || s(h)) {
-    location=t; // tot => neu laden
-  }
+  (h = x+","+y).length>3 || s(h) ? location = t : d; // tot => neu laden
 
   p.unshift(h);
 
