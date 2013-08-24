@@ -17,6 +17,7 @@ s = function(k) {
 };
 
 (A = function() {
+  // neuen Apfel setzen und falls in Schlange => noch mal selbst aufrufen
   s(a = (Math.random()*10^0)+","+new Date%10) && A()
 })();
 
@@ -50,7 +51,7 @@ setInterval(function() {
     t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
   }
 
-  //console.clear();
+  console.clear();
   console.log(t)
 }, 700);
 </script>
