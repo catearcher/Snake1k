@@ -12,14 +12,8 @@ d = 1e7;
 c = 0;
 x = y = 5;
 p = ["5,5"];
-s = function(k,m) {
-  p.forEach(function(z) {
-    if (z == k) {
-      m = 1;
-    }
-  });
-
-  return m;
+s = function(k) {
+  return ~p.indexOf(k);
 };
 
 (A = function() {
