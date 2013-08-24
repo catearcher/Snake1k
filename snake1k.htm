@@ -7,15 +7,11 @@
 // a = position of apple
 // l = last position of tail end
 // A() = placeApple()
-// r = get random integer in range 0..9
 // h = snake head
 // s() = function checking whether a position is inside the snake. if so, returns 1
 d = 0;
 c = 0;
-p = [[5,4]];
-r = function() {
-  return Math.random()*10>>0;
-};
+p = [l=[5,4]];
 s = function(x,y) {
   p.forEach(function(z) {
     if (z+"" == x) {
@@ -27,7 +23,7 @@ s = function(x,y) {
 };
 
 (A = function() {
-  a = [r(), r()];
+  a = [Math.random()*10^0,new Date%10]
 })();
 
 setInterval(function() {
