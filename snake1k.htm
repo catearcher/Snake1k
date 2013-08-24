@@ -23,7 +23,7 @@ s = function(k,m) {
 };
 
 (A = function() {
-  a = [Math.random()*10^0,new Date%10]
+  s(a = (Math.random()*10^0)+","+new Date%10) && A()
 })();
 
 setInterval(function() {
@@ -46,13 +46,13 @@ setInterval(function() {
 
   p.unshift(h);
 
-  h == a+"" ? A() : p.pop();
+  h == a ? A() : p.pop();
 
   // Rendering
   t = "";
 
   for (i=0;i<100;i++) {
-    t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a+""==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
+    t += (s(e = i%10 + "," + (i/10^0)) ? "o" : (a==e ? "x" : ".")) + (i%10==9 ? "\n" : "");
   }
 
   //console.clear();
