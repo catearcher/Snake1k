@@ -27,7 +27,7 @@ s = function(x,y) {
 })();
 
 setInterval(function() {
-  c==1 ? d-- : (c==2 ? d++ : d);
+  d+=[0,-1,1][c];
   c=0;
   h = p[0].slice();
 
