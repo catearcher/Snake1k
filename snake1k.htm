@@ -26,8 +26,8 @@ setInterval(function() {
   c = i = 0;
   t = "";
 
-  x+=[0,1,0,-1][d%4];
-  y+=[-1,0,1,0][d%4];
+  x += (e = [0,1,0,-1])[d%4];
+  y += e[(d+3)%4];
 
   (h = x+","+y).length>3 || s(h) ? location = t : d; // tot => neu laden
 
